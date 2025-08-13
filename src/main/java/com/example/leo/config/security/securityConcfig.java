@@ -1,4 +1,4 @@
-package com.example.leo.config;
+package com.example.leo.config.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
