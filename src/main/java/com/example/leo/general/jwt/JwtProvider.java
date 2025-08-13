@@ -7,6 +7,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,10 +26,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class JwtProvider {
 
+    @Value("${jwt.secret}")
     private String secret;
 
+    @Value("${jwt.access-token-validity-seconds:3600}")
     private long validityInSeconds;
 
+    @Value("${jwt.issuer}")
     private String issuer;
 
     private Key key;

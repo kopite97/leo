@@ -18,8 +18,7 @@ public class SimpleOAuth2User implements OAuth2User {
     public Map<String, Object> getAttributes() {
         return Map.of(
                 "id", info.getId(),
-                "email", info.getEmail(),
-                "name", info.getName(),
+                "nickname", info.getNickname(),
                 "provider", info.getProvider()
         );
     }
